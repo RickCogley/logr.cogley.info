@@ -1,0 +1,13 @@
+<footer class="tc center bt bg-washed-yellow b--near-white pa1 pb3">
+        <small class="f5 mw7 db center phm lh-copy">
+          <nav>
+              <ul class="list pln">
+                <li class="dib prm"><a href="https://www.github.com/RickCogley"><svg xmlns="http://www.w3.org/2000/svg" class="geomicon blue" viewBox="0 0 32 32" width="32" height="32"><use xlink:href="#github"></use></svg></a></li>
+                <li class="dib prm"><a href="https://www.twitter.com/RickCogley"><svg xmlns="http://www.w3.org/2000/svg" class="geomicon blue" viewBox="0 0 32 32" width="32" height="32"><use xlink:href="#twitter"></use></svg></a></li>
+              </ul>
+              </nav>
+              <small class="gray dlig">Made with <svg xmlns="http://www.w3.org/2000/svg" class="dark-pink" viewBox="0 0 32 32" width="10" height="10"><use xlink:href="#heart"></use></svg> and <a class="link dim blue" href="https://gohugo.io/" target="_blank"><b>Hugo</b></a> by <a href="//plus.google.com/&#43;RickCogley?rel=author" class="link dim dark-green" target="_blank"><b>Rick Cogley</b></a> &copy; {{ now.Format "2006"}} <span class="dark-pink">(Ah (Kh (Qh (Jh (10h</span></small>
+        </small>
+        <!-- {{ if .IsPage }}<small class="gray"><em>Updated: {{ .Page.Lastmod }}, Version: {{ .GitInfo.AbbreviatedHash }}</em></small>{{ end }} -->
+        {{ if and (ne .Kind "taxonomy") (ne .Kind "taxonomyTerm") (ne .Kind "404") }}<small class="gray c2sc"><em>Updated: {{ .Lastmod }} {{ .GitInfo.AbbreviatedHash }}</em></small>{{ end }}
+</footer>

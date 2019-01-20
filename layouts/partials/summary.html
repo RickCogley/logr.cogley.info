@@ -1,0 +1,11 @@
+<article>
+    <header>
+      <div>{{ .Date.Format "Monday, 2 Jan, 2006" }} </div>
+    </header>
+
+    <p>{{ .Summary }}</p>
+
+    <footer class="pb4">
+        <a href='{{ .Permalink }}'><nobr>Read more →</nobr></a>
+    </footer>
+</article>

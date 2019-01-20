@@ -1,0 +1,37 @@
+{{ "<!-- ENTERING partial header.html -->" | safeHTML }}
+<head>
+    <meta charset="utf-8">
+    <!-- can go in .HTACCESS!!  -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>{{ .Title }}{{ if ne .Title .Site.Title }} : {{ .Site.Title }}{{ end }}</title>
+    <meta name="author" content="Rick Cogley">
+    <meta name="description" content="{{ if and (eq .Kind "taxonomy") (eq .Kind "taxonomyTerm") }}Content under '{{ .Title }}' at RC Live, short blog posts from Rick Cogley.{{ else }}{{- .Summary -}}{{ end }}">
+    <meta name="keywords" content="{{ if isset .Params "tags" }}{{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}{{ $e }}{{ end }}{{ else }}{{.Site.Params.keywords}}{{ end }}">
+    <link href="http://gmpg.org/xfn/11" rel="profile">
+    <link rel="canonical" href="{{ .Permalink }}">
+    {{ if .RSSLink }}
+    <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
+    <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
+    {{ end }}
+    <!-- Hugo info -->
+    {{ printf "<!--Hugo Build Date: %s-->" .Hugo.BuildDate | safeHTML }}
+    {{ printf "<!--Hugo Commit Hash: %s-->" .Hugo.CommitHash | safeHTML }}
+    {{ .Hugo.Generator }}
+
+    <!-- Enable responsiveness on mobile devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <link rel="stylesheet" href="{{ "fonts/PragmataPro0.824W/PragmataPro-Regular0.824W/stylesheet.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "fonts/PragmataPro0.824W/PragmataPro-Italic0.824W/stylesheet.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "fonts/PragmataPro0.824W/PragmataPro-Bold0.824W/stylesheet.css" | relURL }}">
+    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+    <link rel="stylesheet" href="{{ "css/pragmatapro.css" | relURL }}">
+    <style>
+        .geomicon { width: 1.5em; height: 1.5em; }
+        body{ font-family:'pragmatapro', sans-serif; }
+        code{ font-family:'pragmatapro-mono', monospace; background-color: seashell;}
+    </style>
+  </head>
+{{ "<!-- LEAVING partial header.html -->" | safeHTML }}

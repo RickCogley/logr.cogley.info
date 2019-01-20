@@ -1,0 +1,16 @@
+<!-- curlycurlyless figure imgname="name-of-image-no-extension" width="500x" type="photo" title="blah blah"  greatercurlycurly -->
+<figure class="tc grow">
+{{ $imgname := .Get "imgname" }}
+{{ $imgwidth := .Get "width" }}
+{{ $img := $.Page.Resources.GetByPrefix $imgname }}
+{{ $scaled := $img.Resize $imgwidth }}
+  <a href="{{ $img.Permalink }}" title="{{ .Get "title" }}">
+  <img class="ba br3 b--black-30" src="{{ $scaled.Permalink }}" alt="{{ .Get "type"  }} - {{ .Get "title" }}" >
+  </a>
+  <figcaption class="f6"><em>{{ .Get "type" }}</em>: {{ .Get "title" }}</figcaption>
+</figure>
+
+<!-- end figure  -->
+
+
+

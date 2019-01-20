@@ -1,0 +1,33 @@
+{{ define "main" }} <!-- https://gist.github.com/eddiewebb/735feb48f50f0ddd65ae5606a1cb41ae -->
+
+  <main class="w-50 pb2 center">
+    <form action="{{ .Permalink }}" class="pa1 black-80" id="search_box">
+      <label for="search_query" class="f6 b db mb2 moon-gray">Search Query</label>
+      <input id="search_query" name="q" class="input-reset ba b--black-20 pa2 mb2 db w-50" />
+    </form>
+    <div id="search-results">
+     <h1 class="ss09">Matching Pages</h1>
+    </div>
+  </main>
+
+<script>
+  document.getElementById('search_query').focus();
+</script>
+
+<!-- this template is sucked in by search.js and appended to the search-results div above. So editing here will adjust style -->
+<script id="search-result-template" type="text/x-js-template">
+    <div id="summary-${key}">
+      <h3><a href="${link}">${title}</a></h3>
+      <p>${snippet}</p>
+        <small>
+                ${ isset tags }<strong>Tags: </strong>${tags}${ end }
+        </small>
+    </div>
+</script>
+{{ end }}
+{{ define "footerscripts" }}
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.0/fuse.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>
+<script src="{{ "js/search.js" | absURL }}"></script>
+{{ end }}

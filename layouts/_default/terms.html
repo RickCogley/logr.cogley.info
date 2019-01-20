@@ -1,0 +1,22 @@
+{{ define "header" }}
+  {{- partial "header.html" . -}}
+{{ end }}
+{{ define "main" }}
+<main class="w-50 center">
+  <div class="pb2">
+    <h1 class="ttu fw4 f2 moon-gray">Taxonomy</h1>
+    <h2 class="ttu f3 dark-green">Site {{ .Title }}</h2>
+    <p>
+    {{ $data := .Data }}
+    {{ range $key,$value := .Data.Terms.ByCount }}
+    <ul class="pnl">
+      <li><a class="link dim dark-pink" href="/{{ $data.Plural }}/{{ $value.Name | urlize }}"> {{ $value.Name }} </a> &nbsp; {{ $value.Count }} </li>
+    </ul>
+    {{ end }}
+    </p>
+  </div>
+</main>
+{{ end }}
+{{ define "footer" }}
+  {{- partial "footer.html" . -}}
+{{ end }}

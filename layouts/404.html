@@ -1,0 +1,28 @@
+{{ define "header" }}
+  {{- partial "header.html" . -}}
+{{ end }}
+{{ define "main" }}
+  <main class="w-50 center">
+    <h1 class="ttu fw4 dark-pink">&#xE380; The dreaded &laquo;{{ .Title }}&raquo;&nbsp;&#x2620;</h1>
+    Thanks for visiting. You've reached my {{ .Kind }} page, meaning the content you tried to access cannot be found. Scan the below list of site taxonomies and click through to something of interest.
+    <ul>
+    {{ range $taxonomyname, $taxonomy := .Site.Taxonomies }}
+      <li><a class="link dim" href="/{{ $taxonomyname | urlize }}"><h2 class="dark-green">{{ $taxonomyname }}</h2></a>
+        <ul>
+          {{ range $key, $value := $taxonomy }}
+          <li><h3>{{ $key }}</h3></li>
+            <ul>
+              {{ range $value.Pages }}
+              <li hugo-nav="{{ .RelPermalink }}"><a class="link dim dark-pink" href="{{ .Permalink}}"><em>{{ .LinkTitle }}</em></a></li>
+              {{ end }}
+            </ul>
+          {{ end }}
+        </ul>
+      </li>
+    {{ end }}
+    </ul>
+  </main>
+{{ end }}
+{{ define "footer" }}
+  {{- partial "footer.html" . -}}
+{{ end }}

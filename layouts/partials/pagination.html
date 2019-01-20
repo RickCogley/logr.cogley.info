@@ -1,0 +1,43 @@
+{{ $pag := $.Paginator }}
+{{ if gt $pag.TotalPages 1 }}
+<ul class="list ph3 ph5-ns pv4">
+    {{ with $pag.First }}
+    <li class="dib mr2 grow">
+       <a href="{{ .URL }}" aria-label="First" class="f3 br2 no-underline link white bg-dark-pink hover-washed-yellow bg-animate hover-bg-dark-blue"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    {{ end }}
+    <li class="dib mr2 grow">
+       <a href="{{ if $pag.HasPrev }}{{ $pag.Prev.URL }}{{ else }}#{{ end }}" aria-label="Previous" class="f3 br2 no-underline link white bg-dark-pink hover-washed-yellow bg-animate hover-bg-dark-blue"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    {{ $.Scratch.Set "__paginator.ellipsed" false }}
+    {{ range $pag.Pagers }}
+    {{ $right := sub .TotalPages .PageNumber }}
+    {{ $showNumber := or (le .PageNumber 3) (eq $right 0) }}
+    {{ $showNumber := or $showNumber (and (gt .PageNumber (sub $pag.PageNumber 2)) (lt .PageNumber (add $pag.PageNumber 2)))  }}
+    {{ if $showNumber }}
+        {{ $.Scratch.Set "__paginator.ellipsed" false }}
+        {{ $.Scratch.Set "__paginator.shouldEllipse" false }}
+    {{ else }}
+        {{ $.Scratch.Set "__paginator.shouldEllipse" (not ($.Scratch.Get "__paginator.ellipsed") ) }}
+        {{ $.Scratch.Set "__paginator.ellipsed" true }}
+    {{ end }}
+    {{ if $showNumber }}
+    <li class="dib mr2 grow">
+       <a href="{{ .URL }}" class="f3 br2 no-underline link white{{ if eq . $pag }} bg-gold{{ else }} bg-dark-blue{{ end }} hover-washed-yellow bg-animate hover-bg-orange">{{ .PageNumber }}</a>
+    </li>
+    {{ else if ($.Scratch.Get "__paginator.shouldEllipse") }}
+    <li class="dib mr2 grow disabled">
+       <span aria-hidden="true">&hellip;</span>
+    </li>
+    {{ end }}
+    {{ end }}
+    <li class="dib mr2 grow">
+       <a href="{{ if $pag.HasNext }}{{ $pag.Next.URL }}{{ else }}#{{ end }}" aria-label="Next" class="f3 br2 no-underline link white bg-dark-green hover-washed-yellow bg-animate hover-bg-dark-blue"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    {{ with $pag.Last }}
+    <li class="dib mr2 grow">
+        <a href="{{ .URL }}" aria-label="Last" class="f3 br2 no-underline link white bg-dark-green hover-washed-yellow bg-animate hover-bg-dark-blue"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    {{ end }}
+</ul>
+{{ end }}

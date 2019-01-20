@@ -1,0 +1,255 @@
+body, body p {
+  -webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
+	word-wrap: break-word;
+
+  -webkit-animation-duration: 0.1s;
+  -webkit-animation-name: fontfix;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-delay: 0.1s;
+
+    }
+@-webkit-keyframes fontfix {
+  from { opacity: 1; }
+  to { opacity: 1; }
+}
+
+
+
+h1, h2, h3, h4, h5, h6 {
+  /** text-rendering: optimizeLegibility; */
+	/** font-kerning: normal; */
+	font-variant-ligatures: contextual, discretionary-ligatures;
+	-moz-font-feature-settings: "calt", "dlig";
+	-ms-font-feature-settings: "calt", "dlig";
+	-webkit-font-feature-settings: "calt", "dlig";
+	font-feature-settings: "calt", "dlig";
+}
+
+::selection {
+  background-color: rgba(0, 238, 255, .2);
+  opacity: 0;
+}
+
+/**
+*
+* =======================================================================
+ Hyphens
+* =======================================================================
+*/
+
+input,
+abbr,
+acronym,
+blockquote,
+code,
+kbd,
+q,
+samp,
+var {
+  /* Accepted values: [ none | manual | auto ] */ /* http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation */
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/**
+*
+* =======================================================================
+ Paragraphs and Indentation
+* =======================================================================
+*/
+
+p {
+  /** text-rendering: optimizeLegibility; */
+	/** font-kerning: normal; */
+	font-variant-ligatures: common-ligatures, contextual;
+	font-variant-numeric: oldstyle-nums, proportional-nums;
+	-moz-font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum";
+	-ms-font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum";
+	-webkit-font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum";
+	font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum";
+}
+p abbr,
+p span {
+  /** text-rendering: optimizeLegibility; */
+	/** font-kerning: normal; */
+	font-variant-ligatures: common-ligatures, contextual;
+	font-variant-numeric: oldstyle-nums, proportional-nums;
+	font-variant-caps: all-small-caps;
+	-moz-font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum", "smcp", "c2sc";
+	-ms-font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum", "smcp", "c2sc";
+	-webkit-font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum", "smcp", "c2sc";
+	font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum", "smcp", "c2sc";
+}
+li abbr {
+  /** text-rendering: optimizeLegibility; */
+	font-kerning: normal;
+	font-variant-ligatures: common-ligatures, contextual;
+	font-variant-numeric: oldstyle-nums, proportional-nums;
+	font-variant-caps: all-small-caps;
+	-moz-font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum", "smcp", "c2sc";
+	-ms-font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum", "smcp", "c2sc";
+	-webkit-font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum", "smcp", "c2sc";
+	font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum", "smcp", "c2sc";
+}
+
+td {
+	font-kerning: normal;
+	font-variant-ligatures: common-ligatures, contextual;
+	font-variant-numeric: lining-nums, tabular-nums;
+	-moz-font-feature-settings: "kern", "liga", "clig", "calt", "lnum", "tnum";
+	-ms-font-feature-settings: "kern", "liga", "clig", "calt", "lnum", "tnum";
+	-webkit-font-feature-settings: "kern", "liga", "clig", "calt", "lnum", "tnum";
+	font-feature-settings: "kern", "liga", "clig", "calt", "lnum", "tnum";
+}
+.fraction {
+	font-kerning: normal;
+	font-variant-ligatures: common-ligatures, contextual;
+	font-variant-numeric: diagonal-fractions;
+	-moz-font-feature-settings: "kern", "liga", "clig", "calt", "frac";
+	-ms-font-feature-settings: "kern", "liga", "clig", "calt", "frac";
+	-webkit-font-feature-settings: "kern", "liga", "clig", "calt", "frac";
+	font-feature-settings: "kern", "liga", "clig", "calt", "frac";
+}
+.fn {
+	font-kerning: normal;
+	font-variant-ligatures: common-ligatures, contextual;
+	font-variant-position: sub;
+	-moz-font-feature-settings: "kern", "liga", "clig", "calt", "subs";
+	-ms-font-feature-settings: "kern", "liga", "clig", "calt", "subs";
+	-webkit-font-feature-settings: "kern", "liga", "clig", "calt", "subs";
+	font-feature-settings: "kern", "liga", "clig", "calt", "subs";
+}
+
+
+.calt {
+    font-variant-ligatures: contextual;
+    -moz-font-feature-settings: "calt";
+    -webkit-font-feature-settings: "calt";
+    font-feature-settings: "calt";
+}
+
+.c2sc {
+  font-variant-caps: all-small-caps;
+  -moz-font-feature-settings: "c2sc", "smcp";
+  -webkit-font-feature-settings: "c2sc", "smcp";
+  font-feature-settings: "c2sc", "smcp";
+}
+
+.dlig {
+  font-variant-ligatures: discretionary-ligatures;
+  -moz-font-feature-settings: "dlig";
+  -webkit-font-feature-settings: "dlig";
+  font-feature-settings: "dlig";
+}
+
+.frac {
+  font-variant-numeric: diagonal-fractions;
+  -moz-font-feature-settings: "frac";
+  -webkit-font-feature-settings: "frac";
+  font-feature-settings: "frac";
+}
+
+.fwid {
+  font-variant-east-asian: full-width;
+  -moz-font-feature-settings: "fwid";
+  -webkit-font-feature-settings: "fwid";
+  font-feature-settings: "fwid";
+}
+
+.sinf {
+  font-variant-position: sub;
+  -moz-font-feature-settings: "sinf";
+  -webkit-font-feature-settings: "sinf";
+  font-feature-settings: "sinf";
+}
+
+.sups {
+  font-variant-position: super;
+  -moz-font-feature-settings: "sups";
+  -webkit-font-feature-settings: "sups";
+  font-feature-settings: "sups";
+}
+
+.ss01 {
+  -moz-font-feature-settings: "ss01";
+  -webkit-font-feature-settings: "ss01";
+  font-feature-settings: "ss01";
+}
+
+.ss02 {
+  -moz-font-feature-settings: "ss02";
+  -webkit-font-feature-settings: "ss02";
+  font-feature-settings: "ss02";
+}
+
+.ss03 {
+  -moz-font-feature-settings: "ss03";
+  -webkit-font-feature-settings: "ss03";
+  font-feature-settings: "ss03";
+}
+
+.ss04 {
+  -moz-font-feature-settings: "ss04";
+  -webkit-font-feature-settings: "ss04";
+  font-feature-settings: "ss04";
+}
+
+.ss05 {
+  -moz-font-feature-settings: "ss05";
+  -webkit-font-feature-settings: "ss05";
+  font-feature-settings: "ss05";
+}
+
+.ss06 {
+  -moz-font-feature-settings: "ss06";
+  -webkit-font-feature-settings: "ss06";
+  font-feature-settings: "ss06";
+}
+
+.ss07 {
+  -moz-font-feature-settings: "ss07";
+  -webkit-font-feature-settings: "ss07";
+  font-feature-settings: "ss07";
+}
+
+.ss08 {
+  -moz-font-feature-settings: "ss08";
+  -webkit-font-feature-settings: "ss08";
+  font-feature-settings: "ss08";
+}
+
+.ss09 {
+  -moz-font-feature-settings: "ss09";
+  -webkit-font-feature-settings: "ss09";
+  font-feature-settings: "ss09";
+}
+
+.ss10 {
+  -moz-font-feature-settings: "ss10";
+  -webkit-font-feature-settings: "ss10";
+  font-feature-settings: "ss10";
+}
+
+.ss11 {
+  -moz-font-feature-settings: "ss11";
+  -webkit-font-feature-settings: "ss11";
+  font-feature-settings: "ss11";
+}
+
+.ss12 {
+  -moz-font-feature-settings: "ss12";
+  -webkit-font-feature-settings: "ss12";
+  font-feature-settings: "ss12";
+}
+
+.ss13 {
+  -moz-font-feature-settings: "ss13";
+  -webkit-font-feature-settings: "ss13";
+  font-feature-settings: "ss13";
+}

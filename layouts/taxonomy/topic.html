@@ -1,0 +1,22 @@
+{{ define "header" }}
+  {{- partial "header.html" . -}}
+{{ end }}
+{{ define "main" }}
+<main class="w-50 center">
+  <h1 class="moon-gray">Content with tag: &laquo;{{ .Title }}&raquo;</h1>
+  {{ range .Data.Pages.GroupByDate "2006" }}
+  <h2 class="dark-blue">{{ .Key }}</h2>
+  <ul class="mb3">
+    {{ range .Pages }}
+      {{ .Render "li" }}
+    {{ end }}
+  </ul>
+  {{ end }}
+  <p>
+    {{ partial "list_topics.html" . }}
+  </p>
+</main>
+{{ end }}
+{{ define "footer" }}
+  {{- partial "footer.html" . -}}
+{{ end }}

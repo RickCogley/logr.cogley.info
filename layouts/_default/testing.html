@@ -1,0 +1,18 @@
+{{ define "header" }}
+  {{- partial "header.html" . -}}
+{{ end }}
+{{ define "main" }}
+
+  <main class="w-50 pb2 center">
+
+    <h1 class="ss09">{{ .Title }} TEST</h1>
+    <h2>{{ .Date.Format "Monday, 2 Jan, 2006" }}</h2>
+      {{ .Content }}
+  </main>
+
+{{ end }}
+{{ define "footer" }}
+  {{- partial "footer.html" . -}}
+  {{- partial "bodyend.html" . -}}
+{{ end }}
+

@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'pragmatapro';
+    src: url('pragmataprob_0824-webfont.eot');
+    src: url('pragmataprob_0824-webfont.eot?#iefix') format('embedded-opentype'),
+         url('pragmataprob_0824-webfont.woff2') format('woff2'),
+         url('pragmataprob_0824-webfont.woff') format('woff'),
+         url('pragmataprob_0824-webfont.ttf') format('truetype'),
+         url('pragmataprob_0824-webfont.svg#pragmataprobold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'pragmatapro_mono';
+    src: url('pragmatapro_mono_b_0824-webfont.eot');
+    src: url('pragmatapro_mono_b_0824-webfont.eot?#iefix') format('embedded-opentype'),
+         url('pragmatapro_mono_b_0824-webfont.woff2') format('woff2'),
+         url('pragmatapro_mono_b_0824-webfont.woff') format('woff'),
+         url('pragmatapro_mono_b_0824-webfont.ttf') format('truetype'),
+         url('pragmatapro_mono_b_0824-webfont.svg#pragmatapro_monobold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+
+}
