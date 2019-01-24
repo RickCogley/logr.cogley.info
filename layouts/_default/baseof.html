@@ -5,22 +5,28 @@
   {{- partial "header.html" . -}}
 {{ end }}
 
-<body class="ma0">
-
-      <header class="tc pa1 bb bg-moon-gray b--light-blue">
-         <nav class="db dt-l w-100 border-box pa3 ph5-l">
-           <a class="db dtc-l v-mid gray link dim w-100 w-25-l tc tl-l mb2 mb0-l" href="{{ "/" | relURL }}" title="Home">
-             <img src="{{ "img/Rick_Run_201409 120x120.JPG" | relURL }}" class="dib w3 h3 br-100" alt="Rick Cogley Photo">
-            </a>
-            <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
-              <a class="link dim dark-pink f6 f5-l dib mr3 mr4-l" href="{{ "/" | relURL }}" title="Home"><span class="ss03">RC Live: </span><span class="dark-green">Home</span></a>
-              <a class="link dim dark-green f6 f5-l dib mr3 mr4-l" href="{{ "post"| relURL }}" title="Archive">Archive</a>
-              <a class="link dim dark-green f6 f5-l dib mr3 mr4-l" href="{{ "tags"| relURL }}" title="Tags">Tags</a>
-              <a class="link dim dark-green f6 f5-l dib" href="https://rick.cogley.info/about" title="About Rick Cogley" target="_blank">About Me</a>
-              <a href="{{ "search" | relURL }}" class="ml4"><svg xmlns="http://www.w3.org/2000/svg" class="geomicon blue" viewBox="0 0 32 32" width="32" height="32"><use xlink:href="#search"></use></svg></a>
-            </div>
-         </nav>
-      </header>
+<body class="w-100 sans-serif">
+  <header class="">
+    <div class="cover bg-left bg-center-l" style="background-image: url(/img/Cogley-Banner-Enoshima-Fuji.jpg)">
+        <div class="bg-black-60 pb1 pb2-m pb3-l">
+          <nav class="dt w-100 border-box pa3 ph5-ns">
+            <a class="dtc v-mid mid-gray link dim w-25" href="{{ "/" | relURL }}" title="Home"><img src="/img/rick_cogley_mono.JPG" class="dib w3 h3 br-100" alt="Rick's Tech Logr"></a>
+              <div class="dtc v-mid w-75 tr">
+                <a class="link dim yellow f6 f5-ns dib mr3 mr4-ns" href="{{ "/" | relURL }}" title="Home">Home</a>
+                <a class="link dim yellow f6 f5-ns dib mr3 mr4-ns" href="{{ "post"| relURL }}" title="Archive">Archive</a>
+                <a class="link dim yellow f6 f5-ns dib mr3 mr4-ns" href="https://rick.cogley.info" title="RC Central" target="_blank">Main Site</a>
+                <a class="link dim yellow f6 f5-ns dib mr3 mr4-ns" href="https://mikro5.esolia.info" title="Microblog" target="_blank">Microblog</a>
+                <a class="link dim yellow f6 f5-ns dib mr1 mr2-ns" href="https://esolia.com" title="Rick Cogley Company eSolia" target="_blank">My Company</a>
+                <a href="{{ "search" | relURL }}" class="mt4 ml4"><svg xmlns="http://www.w3.org/2000/svg" class="geomicon white-70" viewBox="0 0 32 32" width="32" height="32"><use xlink:href="#search"></use></svg></a>
+              </div>
+          </nav>
+          <div class="tc-l mt4 mt5-m mt1-l ph3">
+              <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Rick Cogley's Tech Logr</h1>
+              <h2 class="fw1 f3 white-80 mt3 mb4">Short Technical Laser Bursts</h2>
+          </div>
+        </div>
+    </div>
+</header>
       <svg xmnls="http://www.w3.org/2000/svg" width="0" height="0">
         <defs>
           <svg id="heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="currentcolor">
