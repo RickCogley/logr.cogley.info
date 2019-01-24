@@ -1,15 +1,8 @@
-+++
-date = {{ .Date }}
-title = "{{ replace .TranslationBaseName "-" " " | title }}"
-slug = "{{ .TranslationBaseName | lower }}"
-tags = ["x", "y"]
-draft = "true"
-+++
+---
+date: {{ .Date }}
+title: "{{ replace .TranslationBaseName "-" " " }}"
+url: "{{ now.Unix }}"
+draft: false
+---
 
-Intro
-
-<!--more-->
-
-Body
-
-
+Post content in markdown format
