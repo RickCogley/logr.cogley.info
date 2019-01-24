@@ -1,7 +1,7 @@
 ---
 date: {{ .Date }}
 title: "{{ replace .TranslationBaseName "-" " " }}"
-url: "{{ now.Unix }}"
+slug: "{{ now.Unix }}"
 draft: false
 ---
 

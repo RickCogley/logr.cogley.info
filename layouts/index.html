@@ -7,7 +7,7 @@
     <h2 class="gold">Welcome</h2>
       {{ .Content }}
 
-      {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
+      {{ $paginator := .Paginate (where .Data.Pages "Type" "posts") }}
         {{ partial "pagination.html" . }}
         {{ range $paginator.Pages }}
             <h2><a class="link dim dark-green" href="{{ .Permalink }}">{{ .Title }}</a></h2>
