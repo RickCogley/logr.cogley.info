@@ -16,7 +16,7 @@ home = [ "HTML", "RSS", "JSON" ]
 # page = [ "HTML"]
 
 [permalinks]
-  post = "/:year/:month/:day/:slug/"
+  posts = "/:year/:month/:day/:slug/"
 
 [taxonomies]
   tag = "tags"
