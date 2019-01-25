@@ -2,7 +2,7 @@
   <main class="mw7 center">
     <h1 class="ttu fw4 f2 near-white">Posts</h1>
        {{ range first 20 .Data.Pages }}
-          {{ if eq .Type "post"}}
+          {{ if eq .Type "posts"}}
             <h2><a class="link dim dark-green" href="{{ .Permalink }}">{{ .Title }}</a></h2>
             {{- partial "summary.html" . -}}
           {{ end }}
