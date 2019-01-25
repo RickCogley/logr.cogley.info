@@ -17,7 +17,7 @@
                 <h3>{{ .Key }}</h3>
               </div>
               <div class="w-100 w-80-ns pl3-ns">
-              {{ range $paginator.Pages }}
+              {{ range .Pages }}
               <p class="f6 f5-l lh-copy"><a class="link dim dark-green b" href="{{ .Permalink }}">&laquo;{{ .Date.Format "15:04:05" }}&raquo;</a> {{- .Content -}}</p>
               {{ end }}
               </div>
