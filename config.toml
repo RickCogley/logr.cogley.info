@@ -6,6 +6,7 @@ title = "Rick Cogley Logr"
 copyright = "This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) License. Some rights reserved by James R. Cogley"
 enableGitInfo = "true"
 enableemoji = "true"
+paginate = 20
 
 # Note: This can also be set per language.
 # Every Page Kind without a definition here will be assigned the HTML output format.
