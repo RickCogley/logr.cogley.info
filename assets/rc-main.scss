@@ -1,12 +1,16 @@
 @import "tachyons-sass/tachyons.scss";
 
+$codeBgColor: {{ .Param "style.codeBgColor" }};
+$textHilite: {{ .Param "style.textHilite" }};
+
+
 .geomicon { width: 1.5em; height: 1.5em; }
 
 html, body, .sans-serif {
     font-family: 'Anonymous Pro', monospace;
 }
 
-code, kbd, pre, samp { font-family:'Anonymous Pro', monospace; background-color: honeydew;}
+code, kbd, pre, samp { font-family:'Anonymous Pro', monospace; background-color: $codeBgColor;}
 
 body, body p {
   -webkit-hyphens: auto;
@@ -27,8 +31,6 @@ body, body p {
   to { opacity: 1; }
 }
 
-
-
 h1, h2, h3, h4, h5, h6 {
   /** text-rendering: optimizeLegibility; */
 	/** font-kerning: normal; */
@@ -40,7 +42,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::selection {
-  background-color: rgba(0, 238, 255, .2);
+  background-color: $textHilite;
   opacity: 0;
 }
 
