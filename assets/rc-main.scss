@@ -1,8 +1,49 @@
 @import "tachyons-sass/tachyons.scss";
 
-$codeBgColor: {{ .Site.Params.style.codeBgColor | default "honeydew" }} !default;
-$textHilite: {{ .Site.Params.style.textHilite | default "goldenrod" }} !default;
+//$codeBgColor: {{ .Site.Params.style.codeBgColor | default "honeydew" }} !default;
+//$textHilite: {{ .Site.Params.style.textHilite | default "goldenrod" }} !default;
 
+{{ $mnth := now.Format "January"}}
+{{ if eq $mnth "January" }}
+
+{{ else if eq $mnth "February" }}
+$textHilite: $yellow !default;
+$codeBgColor: #eff7eb !default;
+$one: #658248 !default;
+$two: #a0cf89 !default;
+$three: $yellow !default;
+$four: #15230e !default;
+
+{{ else if eq $mnth "March" }}
+
+{{ else if eq $mnth "April" }}
+
+{{ else if eq $mnth "May" }}
+
+{{ else if eq $mnth "June" }}
+
+{{ else if eq $mnth "July" }}
+
+{{ else if eq $mnth "August" }}
+
+{{ else if eq $mnth "September" }}
+
+{{ else if eq $mnth "October" }}
+
+{{ else if eq $mnth "November" }}
+
+{{ else }}
+
+{{ end }}
+
+.one { color: $one; }
+.two { color: $two; }
+.three { color: $three; }
+.four { color: $four; }
+.bg-one { background-color: $one; }
+.bg-two { background-color: $two; }
+.bg-three { background-color: $three; }
+.bg-four { background-color: $four; }
 
 .geomicon { width: 1.5em; height: 1.5em; }
 
