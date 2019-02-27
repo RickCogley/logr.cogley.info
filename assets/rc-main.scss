@@ -1,7 +1,7 @@
 @import "tachyons-sass/tachyons.scss";
 
-$codeBgColor: {{ .Param "style.codeBgColor" }};
-$textHilite: {{ .Param "style.textHilite" }};
+$codeBgColor: {{ .Site.Params.style.codeBgColor | default "honeydew" }} !default;
+$textHilite: {{ .Site.Params.style.textHilite | default "goldenrod" }} !default;
 
 
 .geomicon { width: 1.5em; height: 1.5em; }
