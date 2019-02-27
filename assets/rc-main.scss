@@ -5,6 +5,12 @@
 
 {{ $mnth := now.Format "January"}}
 {{ if eq $mnth "January" }}
+$textHilite: $yellow !default;
+$codeBgColor: #eff7eb !default;
+$one: #658248 !default;
+$two: #a0cf89 !default;
+$three: $yellow !default;
+$four: #15230e !default;
 
 {{ else if eq $mnth "February" }}
 $textHilite: $yellow !default;
@@ -15,6 +21,12 @@ $three: $yellow !default;
 $four: #15230e !default;
 
 {{ else if eq $mnth "March" }}
+$textHilite: #b385d6 !default;
+$codeBgColor: #f3ecf8 !default;
+$one: #66308e !default;
+$two: #a0cf89 !default;
+$three: #c804fe !default;
+$four: #1c0d27 !default;
 
 {{ else if eq $mnth "April" }}
 
