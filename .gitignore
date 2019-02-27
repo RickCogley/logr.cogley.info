@@ -1,6 +1,9 @@
 # Hugo
 public/
 
+# tachyons clone
+tachyons-sass
+
 # Backup Files
 *.markdown~
 *.md~
