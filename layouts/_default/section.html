@@ -4,10 +4,10 @@
 {{ define "main" }}
 <main class="w-50 center">
   <div class="pb4">
-   <h1 class="ttu fw4 f2 moon-gray">{{ .Title }}</h1>
+   <h1 class="ttu fw4 f2 one">{{ .Title }}</h1>
        {{ .Content }}
            {{ range .Data.Pages.GroupByDate "2006" }}
-            <h2 class="ttu f3 blue">{{ .Key }}</h2>
+            <h2 class="ttu f3 four">{{ .Key }}</h2>
                 <ul class="list pnl">
                     {{ range .Pages }}
                         {{ .Render "li2"}}
