@@ -41,3 +41,7 @@ resampleFilter = "box"
 
 # JPEG quality setting. Default is 75.
 quality = 80
+
+# Assets
+
+assetDir = "assets"
