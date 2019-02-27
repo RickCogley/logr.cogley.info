@@ -23,9 +23,12 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
 
-    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"> -->
+    {{ $style := resources.Get "rc-main.scss" | toCSS | postCSS | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}">
+
     <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro:400,400i,700&amp;subset=latin-ext" rel="stylesheet">
-    <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
+    <!-- <link rel="stylesheet" href="{{ "css/main.css" | relURL }}"> -->
     <!-- <link rel="stylesheet" href="{{ "fonts/PragmataPro0.824W/PragmataPro-Regular0.824W/stylesheet.css" | relURL }}">
     <link rel="stylesheet" href="{{ "fonts/PragmataPro0.824W/PragmataPro-Italic0.824W/stylesheet.css" | relURL }}">
     <link rel="stylesheet" href="{{ "fonts/PragmataPro0.824W/PragmataPro-Bold0.824W/stylesheet.css" | relURL }}">
