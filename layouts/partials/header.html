@@ -23,6 +23,6 @@
     <meta name="MobileOptimized" content="320">
     <link href="https://fonts.googleapis.com/css?family=Anonymous+Pro:400,400i,700&amp;subset=latin-ext" rel="stylesheet">
     {{ $styles := resources.Get "rc-main.scss" | resources.ExecuteAsTemplate "style.scss" . | toCSS | postCSS | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $styles.Permalink }}">
+    <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
   </head>
 {{ "<!-- LEAVING partial header.html -->" | safeHTML }}
