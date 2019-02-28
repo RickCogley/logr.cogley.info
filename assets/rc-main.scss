@@ -114,9 +114,10 @@ html, body, .sans-serif {
 p code, kbd, pre, samp {
   font-family:'Anonymous Pro', monospace;
   background-color: $codeBgColor;
+  font-size: 1.25rem;
 }
 
-code, p code, kbd, pre, samp {
+code {
   font-size: 1rem;
 }
 
