@@ -13,12 +13,12 @@ $three: $yellow !default;
 $four: #15230e !default;
 
 {{ else if eq $mnth "February" }}
-$textHilite: #31bdfb !default;
-$codeBgColor: #def4fe !default;
-$one: #dbb204 !default;
-$two: #f4c605 !default;
-$three: #A0CF89 !default;
-$four: #2c2401 !default;
+$textHilite: $yellow !default;
+$codeBgColor: #eff7eb !default;
+$one: #658248 !default;
+$two: #a0cf89 !default;
+$three: $yellow !default;
+$four: #15230e !default;
 
 {{ else if eq $mnth "March" }}
 $textHilite: #b385d6 !default;
