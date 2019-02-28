@@ -13,12 +13,12 @@ $three: $yellow !default;
 $four: #15230e !default;
 
 {{ else if eq $mnth "February" }}
-$textHilite: $yellow !default;
-$codeBgColor: #eff7eb !default;
-$one: #658248 !default;
-$two: #a0cf89 !default;
-$three: $yellow !default;
-$four: #15230e !default;
+$textHilite: #f4044a !default;
+$codeBgColor: #f4dce3 !default;
+$one: #1D90C6 !default;
+$two: #8D6D47 !default;
+$three: #BB3D62 !default;
+$four: #092c3d !default;
 
 {{ else if eq $mnth "March" }}
 $textHilite: #b385d6 !default;
@@ -54,14 +54,34 @@ $three: #A0CF89 !default;
 $four: #2c2401 !default;
 
 {{ else if eq $mnth "July" }}
+$textHilite: #327997 !default;
+$codeBgColor: #f6eae5 !default;
+$one: #975032 !default;
+$two: #bd643f !default;
+$three: #629A59 !default;
+$four: #21120b !default;
 
 {{ else if eq $mnth "August" }}
+$textHilite: #0399e0 !default;
+$codeBgColor: #fde8e0 !default;
+$one: #1D90C6 !default;
+$two: #4E7EA6 !default;
+$three: #F7B197 !default;
+$four: #092c3d !default;
 
 {{ else if eq $mnth "September" }}
+$textHilite: #f4044a !default;
+$codeBgColor: #f4dce3 !default;
+$one: #1D90C6 !default;
+$two: #8D6D47 !default;
+$three: #BB3D62 !default;
+$four: #092c3d !default;
 
 {{ else if eq $mnth "October" }}
 
+
 {{ else if eq $mnth "November" }}
+
 
 {{ else }}
 
