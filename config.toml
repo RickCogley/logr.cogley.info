@@ -7,6 +7,10 @@ copyright = "This work is licensed under a Creative Commons Attribution-ShareAli
 enableGitInfo = "true"
 enableemoji = "true"
 paginate = 20
+pygmentsOptions = "linenos=table,noclasses=true,nobackground=true,classprefix=rc"
+pygmentsCodeFences = "true"
+pygmentsCodefencesGuessSyntax = "true"
+pygmentsStyle = "monokailight"
 
 # Note: This can also be set per language.
 # Every Page Kind without a definition here will be assigned the HTML output format.

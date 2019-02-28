@@ -111,7 +111,7 @@ html, body, .sans-serif {
     font-family: 'Anonymous Pro', monospace;
 }
 
-code, kbd, pre, samp { font-family:'Anonymous Pro', monospace; background-color: $codeBgColor;}
+p code, kbd, pre, samp { font-family:'Anonymous Pro', monospace; background-color: $codeBgColor;}
 
 body, body p {
   -webkit-hyphens: auto;
