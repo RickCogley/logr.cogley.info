@@ -12,13 +12,21 @@ $two: #a0cf89 !default;
 $three: $yellow !default;
 $four: #15230e !default;
 
+{{ else if eq $mnth "THISISFORFEBBRO" }}
+$textHilite: $yellow !default;
+$codeBgColor: #eff7eb !default;
+$one: #658248 !default;
+$two: #a0cf89 !default;
+$three: $yellow !default;
+$four: #15230e !default;
+
 {{ else if eq $mnth "February" }}
-$textHilite: #f4044a !default;
-$codeBgColor: #f4dce3 !default;
-$one: #1D90C6 !default;
-$two: #8D6D47 !default;
-$three: #BB3D62 !default;
-$four: #092c3d !default;
+$textHilite: $yellow !default;
+$codeBgColor: #eff7eb !default;
+$one: #658248 !default;
+$two: #a0cf89 !default;
+$three: $yellow !default;
+$four: #15230e !default;
 
 {{ else if eq $mnth "March" }}
 $textHilite: #b385d6 !default;
@@ -84,6 +92,7 @@ $four: #092c3d !default;
 
 
 {{ else }}
+
 
 {{ end }}
 
