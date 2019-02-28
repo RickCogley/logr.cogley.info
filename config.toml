@@ -7,7 +7,7 @@ copyright = "This work is licensed under a Creative Commons Attribution-ShareAli
 enableGitInfo = "true"
 enableemoji = "true"
 paginate = 20
-pygmentsOptions = "linenos=table,noclasses=true,nobackground=true,classprefix=rc"
+pygmentsOptions = "linenos=table"
 pygmentsCodeFences = "true"
 pygmentsCodefencesGuessSyntax = "true"
 pygmentsStyle = "tango"
