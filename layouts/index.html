@@ -5,7 +5,7 @@
 <div class="">
   <main class="w-50 mw7 center bg-white">
     <h1 class="one">Welcome</h1>
-    <div class="pb2">{{ .Content }}</div>
+    <div class="pb2 f4">{{ .Content }}</div>
       {{ $paginator := .Paginate (where .Data.Pages "Type" "posts") }}
         {{ partial "pagination.html" . }}
         <section class="mw7 center">
@@ -14,11 +14,11 @@
           <div class="db pv2 ph3 ph0-l black">
             <div class="flex flex-column flex-row-ns bt b--black-10">
               <div class="pr3-ns mb4 mb0-ns w-100 w-20-ns">
-                <h3 class="gray">{{ .Key }}</h3>
+                <h3 class="gray f4">{{ .Key }}</h3>
               </div>
-              <div class="w-100 w-80-ns pl3-ns">
+              <div class="w-100 w-80-ns pl3-ns f4">
               {{ range .Pages }}
-              <p class="f6 f5-l lh-copy"><a class="link dim two b" href="{{ .Permalink }}">&laquo;{{ .Date.Format "15:04:05" }}&raquo;</a> {{- .Content -}}</p>
+              <p class="f4"><a class="link dim two b" href="{{ .Permalink }}">&laquo;{{ .Date.Format "15:04:05" }}&raquo;</a> {{- .Content -}}</p>
               {{ end }}
               </div>
             </div>

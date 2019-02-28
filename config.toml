@@ -10,7 +10,7 @@ paginate = 20
 pygmentsOptions = "linenos=table,noclasses=true,nobackground=true,classprefix=rc"
 pygmentsCodeFences = "true"
 pygmentsCodefencesGuessSyntax = "true"
-pygmentsStyle = "monokailight"
+pygmentsStyle = "tango"
 
 # Note: This can also be set per language.
 # Every Page Kind without a definition here will be assigned the HTML output format.
