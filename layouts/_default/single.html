@@ -5,8 +5,14 @@
 
   <main class="w-50 pb2 center">
 
-    <h1 class="ss09">{{ .Title }}</h1>
-    <h2>{{ .Date.Format "Monday, 2 Jan, 2006" }}</h2>
+    <h1 class="ss09 one">{{ .Title }}</h1>
+    <h2 class="four">{{ .Date.Format "Monday, 2 Jan, 2006" }}</h2>
+    {{ $dt := .Date.Format "02 Jan 2006" }}
+    {{ range where $.Site.Data.holidays ".Date with Month Name" $dt }}
+    {{ with (index . "Name") }}
+    <span class="three bg-near-white br3 pa1">🗓 "<strong><i>{{ . }}</i></strong>" in Japan</span>
+    {{ end }}
+    {{ end }}
     <article class="f4">
     {{ .Content }}
     </article>
