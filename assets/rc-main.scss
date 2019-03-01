@@ -5,21 +5,12 @@
 
 {{ $mnth := now.Format "January"}}
 {{ if eq $mnth "January" }}
-$textHilite: $yellow !default;
-$codeBgColor: #eff7eb !default;
-$one: #658248 !default;
-$two: #a0cf89 !default;
-$three: $yellow !default;
-$four: #15230e !default;
-$topbannerimage: "Cogley-Banner-Enoshima-Fuji.jpg";
-
-{{ else if eq $mnth "THISISFORFEBBRO" }}
-$textHilite: $yellow !default;
-$codeBgColor: #eff7eb !default;
-$one: #658248 !default;
-$two: #a0cf89 !default;
-$three: $yellow !default;
-$four: #15230e !default;
+$textHilite: #afd506 !default;
+$codeBgColor: #ecf1d6 !default;
+$one: #b5191d !default;
+$two: $gold !default;
+$three: #8FA239 !default;
+$four: #2b0607 !default;
 $topbannerimage: "Cogley-Banner-Enoshima-Fuji.jpg";
 
 {{ else if eq $mnth "February" }}
@@ -96,13 +87,31 @@ $four: #092c3d !default;
 $topbannerimage: "Cogley-Banner-Enoshima-Fuji.jpg";
 
 {{ else if eq $mnth "October" }}
-
+$textHilite: #b60404 !default;
+$codeBgColor: #f3ebde !default;
+$one: #843636 !default;
+$two: #D3B788 !default;
+$three: #0d83fa !default;
+$four: #230e0e !default;
+$topbannerimage: "Cogley-Banner-Enoshima-Fuji.jpg";
 
 {{ else if eq $mnth "November" }}
-
+$textHilite: #fe9e00 !default;
+$codeBgColor: #f9eeec !default;
+$one: #D78600 !default;
+$two: #E4C900 !default;
+$three: #E01906 !default;
+$four: #3a2400 !default;
+$topbannerimage: "Cogley-Banner-Enoshima-Fuji.jpg";
 
 {{ else }}
-
+$textHilite: #05aefa !default;
+$codeBgColor: #ecf9ff !default;
+$one: #FCE065 !default;
+$two: #65cdfc !default;
+$three: #EAD594 !default;
+$four: #3a2f01 !default;
+$topbannerimage: "Cogley-Banner-Enoshima-Fuji.jpg";
 
 {{ end }}
 
