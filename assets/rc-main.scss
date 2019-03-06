@@ -127,13 +127,22 @@ $topbannerimage: "Cogley-Banner-Green-LEDs-1170x350-004.JPG";
 .geomicon { width: 1.5em; height: 1.5em; }
 
 html, body, .sans-serif {
-    font-family: 'Anonymous Pro', monospace;
+    font-family: 'IBM Plex Mono', monospace;
 }
 
 p code, kbd, pre, samp {
-  font-family:'Anonymous Pro', monospace;
+  font-family:'IBM Plex Mono', monospace;
   background-color: $codeBgColor;
   font-size: 1.25rem;
+}
+
+blockquote {
+  color: $textHilite;
+  font-weight: 200;
+  font-style: italic;
+  font-size: 1.5rem;
+  border-left: 10px solid $codeBgColor;
+  padding-left: 15px;
 }
 
 code {
