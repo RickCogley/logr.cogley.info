@@ -3,7 +3,7 @@
 {{ end }}
 {{ define "main" }}
 <div class="">
-  <main class="w-50 mw7 center bg-white">
+  <main class="w-70 w-50-ns center bg-white">
     <h1 class="one">Welcome</h1>
     <div class="pb2 f4">{{ .Content }}</div>
       {{ $paginator := .Paginate (where .Data.Pages "Type" "posts") }}
