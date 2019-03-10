@@ -112,17 +112,20 @@ $two: #65cdfc !default;
 $three: #EAD594 !default;
 $four: #3a2f01 !default;
 $topbannerimage: "Cogley-Banner-Green-LEDs-1170x350-004.JPG";
-
 {{ end }}
 
 .one { color: $one; }
 .two { color: $two; }
 .three { color: $three; }
 .four { color: $four; }
+.texthilite { color: $textHilite; }
+.codebgcolor { color: $codeBgColor; }
 .bg-one { background-color: $one; }
 .bg-two { background-color: $two; }
 .bg-three { background-color: $three; }
 .bg-four { background-color: $four; }
+.bg-texthilite { background-color: $textHilite; }
+.bg-codebgcolor { background-color: $codeBgColor; }
 .topbanner { background-image: url(/img/#{$topbannerimage}); }
 .geomicon { width: 1.5em; height: 1.5em; }
 
