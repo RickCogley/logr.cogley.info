@@ -10,7 +10,6 @@
         {{ partial "pagination.html" . }}
         <section class="mw7 center">
         {{ range $paginator.Pages.GroupByDate "02 Jan 2006" }}
-        <article class="">
           <div class="db pv2 ph3 ph0-l black">
             <div class="flex flex-column flex-row-ns bt b--black-10">
               <div class="pr3-ns mb4 mb0-ns w-100 w-20-ns">
@@ -24,12 +23,18 @@
               </div>
               <div class="w-100 w-80-ns pl3-ns f4">
               {{ range .Pages }}
-              <p class="f4"><a class="link dim two b" href="{{ .Permalink }}">&laquo;{{ .Date.Format "15:04:05" }}&raquo;</a> {{- .Content -}}</p>
+
+              <article class="h-entry entry">
+                <p class="f4"><a class="link dim two b u-url url" href="{{ .Permalink }}">&laquo;{{ .Date.Format "15:04:05" }}&raquo;</a></p><p class="e-content" itemprop="articleBody"> {{- .Content -}}</p>
+                <span class="p-name dn" itemprop="name headline">{{ .Title }} - {{ .Content | plainify | truncate 30 }}</span>
+                <time class="dt-published dn">{{ .Date }}</time>
+                <span class="p-author dn">Rick Cogley</span>
+              </article>
+
               {{ end }}
               </div>
             </div>
           </div>
-        </article>
         {{ end }}
         </section>
         {{ partial "pagination.html" . }}

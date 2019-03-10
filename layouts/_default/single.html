@@ -4,7 +4,7 @@
 {{ define "main" }}
 
   <main class="w-70 w-50-ns pb2 center">
-
+    <article class="h-entry entry f4">
     <h1 class="ss09 one">{{ .Title }}</h1>
     <h2 class="four">{{ .Date.Format "Monday, 2 Jan, 2006" }}</h2>
     {{ $dt := .Date.Format "02 Jan 2006" }}
@@ -13,12 +13,13 @@
     <span class="three bg-near-white br3 pa1">🗓 "<strong><i>{{ . }}</i></strong>" in Japan</span>
     {{ end }}
     {{ end }}
-    <article class="f4">
-    {{ .Content }}
+    <p class="e-content f4" itemprop="articleBody"> {{- .Content -}}</p>
+    <a class="u-url url dn" href="{{ .Permalink }}"></a><span class="p-name dn" itemprop="name headline">{{ .Title }} - {{ .Content | plainify | truncate 30 }}</span></a>
+    <time class="dt-published dn">{{ .Date }}</time>
+    <span class="p-author dn">Rick Cogley</span>
     </article>
       <a class="f6 link dim br-pill ph3 pv2 mb4 dib white bg-three" href="/">Back to Home</a>
   </main>
-
 {{ end }}
 {{ define "footer" }}
   {{- partial "footer.html" . -}}
