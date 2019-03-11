@@ -38,6 +38,13 @@ home = [ "HTML", "RSS", "JSON" ]
     [params.style]
        codeBgColor = "$washed-green"
        textHilite = "$gold"
+    [Params.indieweb]
+       domain = "https://logr.cogley.info/" # must end with a slash
+       webring = "🚴🌶😧" # Get your IndieWeb Webring ID from https://xn--sr8hvo.ws
+       [Params.indieweb.webmention]
+          endpoint = "https://webmention.io/" # must end with a slash
+          account = "logr.cogley.info"
+
 
 [imaging]
 # Default resample filter used for resizing. Default is Box,
