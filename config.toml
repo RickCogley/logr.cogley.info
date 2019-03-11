@@ -27,14 +27,14 @@ home = [ "HTML", "RSS", "JSON" ]
   tag = "tags"
 
 [params]
-    description = "RCLive is bite-sized blog posts from Rick Cogley."
-    keywords = "Cogley,Japan,IT,Culture"
+    description = "RC Logr is bite-sized technical micro posts from Rick Cogley."
+    keywords = "Cogley,Tech,Geek,Micropost,cli,terminal,technical"
     # Used when a given page doesn't set its own.
     defaultDescription = "A post by Rick Cogley"
     defaultKeywords = "cogley,post"
     thumbnail = "/img/rclive-logo.png"
     ISO8601 = "2006-01-02T15:04:05JST"
-    googleAnalytics = "UA-1040233-9"
+    googleAnalytics = ""
     [params.style]
        codeBgColor = "$washed-green"
        textHilite = "$gold"
