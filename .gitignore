@@ -3,6 +3,10 @@ public/
 
 # tachyons clone
 tachyons-sass
+tachyons
+
+# Sass
+src/scss/.sass-cache/
 
 # Backup Files
 *.markdown~
@@ -40,9 +44,11 @@ public
 dist
 bundle
 
-# Dependency directory
+# Node Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
+npm-debug.log
+bundle/
 
 # Mac File System File...utterly useless to anyone but me.
 .DS_Store
