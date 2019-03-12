@@ -1,0 +1,35 @@
+<!-- Send webmention -->
+<!-- https://github.com/dg01d/reproach/blob/master/layouts/partials/mention.html -->
+{{ $page := . }}
+{{ with site.Params.indieweb }}
+    {{ $domain := .domain }}
+    {{ with .webmention }}
+    <div class="pa4-l">
+      {{ printf `<form action="%s%s/webmention" method="post" class="bg-two mw7 center pa4 br2-ns ba b--black-10">` .endpoint .account | safeHTML }}
+        <fieldset class="cf bn ma0 pa0">
+          <legend class="pa0 f5 f4-ns mb3 black-80">Enter your <a href="https://indieweb.org/responses">response</a> URL to send a webmention.</legend>
+          <div class="cf">
+          {{ printf `<input name="source" placeholder="https://example.com/reply-to-%s/" type="url" class="f6 f5-l input-reset bn fl black-80 bg-white pa3 lh-solid w-100 w-75-m w-80-l br2-ns br--left-ns">` ($page.Title | urlize) | safeHTML }}
+          {{ printf `<input name="target" value="%s" type="hidden">` ($page.Permalink | replaceRE "^http://localhost:[0-9]+/" $domain) | safeHTML }}
+          <input value="Mention" type="submit"  class="f6 f5-l button-reset fl pv3 tc bn bg-animate bg-black-50 hover-bg-black white pointer w-100 w-25-m w-20-l br2-ns br--right-ns">
+            </div>
+        </fieldset>
+      {{ printf "</form>" | safeHTML }}
+    </div>
+
+        <!-- Comment using https://quill.p3k.io/ and https://commentpara.de/. -->
+        <div class="pa4-l">
+            <div class="bg-one mw7 center ph4 pt2 br2-ns ba b--black-10">
+                <p class="f5 f4-ns white">Or click the below button to send a "comment" webmention. If asked about your website on an IndieAuth login screen, use https://commentpara.de</p>
+                <p class="f6 f5-ns white i">Markdown Supported: <span class="black"><code class="f6">**bold**, _italics_, [descn](url), `monospace`</code></span>, even fenced code blocks with <a href="https://gohugo.io/content-management/syntax-highlighting/#list-of-chroma-highlighting-languages" class="link two" target="_blank">syntax highlighting</a>.</p>
+
+                <form method="get" action="https://quill.p3k.io/" target="_blank">
+                  <input type="hidden" name="dontask" value="1" />
+                  <input type="hidden" name="me" value="https://commentpara.de/" />
+                  <input type="hidden" name="reply" value="{{ $page.Permalink }}" />
+                  <input type="submit" value="Write a comment"   class="f6 f5-l button-reset pv3 tc bn bg-animate bg-black-40 hover-bg-black white pointer w-100 w-25-m w-20-l br2-ns dib mb3"/>
+              </form>
+            </div>
+        </div>
+    {{ end }}
+{{ end }}
