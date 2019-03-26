@@ -1,0 +1,32 @@
+{{/*
+    https://www.w3.org/TR/jf2/#jf2feed_example
+    {
+        "type": "feed",
+        "url": "https://example.org/myfeed.html",
+        "name": "Brent Simmons’s Microblog",
+        "author": {
+            "type": "card",
+            "name": "Brent Simmons",
+            "url": "http://example.org/",
+            "photo": "https://example.org/avatar.png"
+        },
+        "children": [
+            {
+                "type": "entry",
+                "uid": "https://example.org/2347259",
+                "url": "https://example.org/2347259",
+                "content": {
+                  "text": "Cats are neat. \n\nhttps://example.org/cats"
+                },
+                "published": "2016-02-09T14:22:00-07:00"
+            }
+        ]
+}
+  */}}
+{{- $.Scratch.Add "jf2feed" slice -}}
+{{- range (where .Pages "Type" "in" site.Params.mainSections) -}}
+  {{- $summary_html := (or (.Description | markdownify) .Summary) -}}
+  {{- $.Scratch.Add "jf2feed" (dict "type" "entry" "url" .Permalink "published" .Date "name" .Title "summary" ((or (.Description | markdownify) .Summary) | plainify) "content" (dict "html" .Content "text" .Plain)) -}}
+{{- end -}}
+{{- $jf2 := (dict "type" "feed" "url" .Permalink "name" .Title "author" (dict "type" "card" "url" site.BaseURL "name" site.Author.name)  "children" ($.Scratch.Get "jf2feed")) -}}
+{{- $jf2 | jsonify -}}
