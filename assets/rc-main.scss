@@ -133,7 +133,7 @@ html, body, .sans-serif {
     font-family: 'IBM Plex Mono', monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-p code, kbd, pre, samp {
+p code, li code, kbd, pre, samp {
   font-family:'IBM Plex Mono', monospace;
   background-color: $codeBgColor;
   font-size: 1.25rem;
@@ -149,7 +149,7 @@ blockquote {
 }
 
 code {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 body, body p {
