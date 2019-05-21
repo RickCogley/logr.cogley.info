@@ -1,0 +1,21 @@
+{{ define "header" }}
+  {{- partial "header.html" . -}}
+{{ end }}
+{{ define "main" }}
+<main class="w-70 w-50-ns pb2 center">
+  <article class="h-entry entry f4 pb4">
+   <h1 class="ttu fw4 f2 ss09 one">{{ .Title }}</h1>
+          {{ range first 1 .Site.RegularPages.ByPublishDate.Reverse }}
+          <h2 class="ttu f3 two"><a class="link" href="{{ .Permalink }}">{{ .Title }}</a></h2>
+          <h4 class="three">{{ .Date.Format "Monday, 2 Jan, 2006" }}</h4>
+            {{ .Content }}
+          {{ end }}
+  </article>
+  <a class="f6 link dim br-pill ph3 pv2 mb4 dib white bg-three" href="/">Back to Home</a>
+</main>
+{{ end }}
+{{ define "footer" }}
+  {{- partial "footer.html" . -}}
+  {{- partial "bodyend.html" . -}}
+{{ end }}
+
