@@ -1,7 +1,7 @@
 ---
 title: "Latest Logr"
-date: 2019-03-01T08:24:20+09:00
+date: 2019-05-22T10:51:42+09:00
 draft: false
 ---
 
-Latest page Desu
+Content of last-updated page.
