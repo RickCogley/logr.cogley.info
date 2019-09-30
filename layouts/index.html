@@ -6,12 +6,10 @@
   <main class="w-70 w-50-ns center bg-white">
     <h1 class="one">Welcome</h1>
     <div class="pb2 f4">{{ .Content }}</div>
-      {{ $paginator := .Paginate (where .Pages "Type" "posts") }}
-      <span>{{$paginator.TotalPages}}</span>
-        <!-- {{ partial "pagination.html" . }} -->
-        {{ template "_internal/pagination.html" . }}
+      {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") }}
+        {{ partial "pagination.html" . }}
         <section class="mw7 center">
-        {{ range $paginator.Pages.GroupByDate "02 Jan 2006" }}
+        {{ range ($paginator.Pages.GroupByDate "02 Jan 2006") }}
           <div class="db pv2 ph3 ph0-l black">
             <div class="flex flex-column flex-row-ns bt b--black-10">
               <div class="pr3-ns mb4 mb0-ns w-100 w-20-ns">
@@ -24,7 +22,7 @@
                 {{ end }}
               </div>
               <div class="w-100 w-80-ns pl3-ns f4">
-              {{ range $paginator.Pages }}
+              {{ range .Pages }}
 
               <article class="h-entry entry">
                 <p class="f4"><a class="link dim two b u-url url" href="{{ .Permalink }}">&laquo;{{ .Date.Format "15:04:05" }}&raquo;</a></p><p class="e-content" itemprop="articleBody"> {{- .Content -}}</p>
@@ -39,8 +37,7 @@
           </div>
         {{ end }}
         </section>
-        <!-- {{ partial "pagination.html" . }} -->
-        {{ template "_internal/pagination.html" . }}
+        {{ partial "pagination.html" . }}
 
   </main>
 </div>
