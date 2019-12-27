@@ -216,6 +216,24 @@
     "Name Jp": "年末休み"
   },
   {
+    "@row.id": 364,
+    "Date": "2019-12-29T00:00:00+00:00",
+    "Date in YYYYMMDD": "20191229",
+    "Day of Week": "Sunday",
+    "Date with Month Name": "29 Dec 2019",
+    "Name": "Year End Holiday",
+    "Name Jp": "年末休み"
+  },
+  {
+    "@row.id": 363,
+    "Date": "2019-12-28T00:00:00+00:00",
+    "Date in YYYYMMDD": "20191228",
+    "Day of Week": "Saturday",
+    "Date with Month Name": "28 Dec 2019",
+    "Name": "Year End Holiday",
+    "Name Jp": "年末休み"
+  },
+  {
     "@row.id": 327,
     "Date": "2019-11-23T00:00:00+00:00",
     "Date in YYYYMMDD": "20191123",
