@@ -1,6 +1,6 @@
 # Hugo
 public/
-themes/
+# themes/
 
 # tachyons clone
 tachyons-sass
