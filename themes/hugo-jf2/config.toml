@@ -1,0 +1,33 @@
+# Custom Output Formats defined: "JF2Post", "JF2Feed"
+
+# JF2 - https://www.w3.org/TR/jf2/
+# JF2 post
+# Add "JF2Post" to the Page Kinds under [outputs] (in your site config) for which
+# you want to enable JF2Post. As it is JF2 for posts, it would usually be only
+# for the "page" kind.
+# Example:
+#   [outputs]
+#     page = ["HTML", "JF2Post"]
+[mediaTypes."application/jf2post+json"]
+  suffixes = ["json"]
+[outputFormats.JF2Post]
+  mediaType = "application/jf2post+json"
+  baseName = "jf2post" # generated file = <baseName>.<mediaType."application/jf2post+json".suffixes[0]> = jf2post.json
+  isPlainText = true
+
+# JF2 feed
+# Add "JF2Feed" to the Page Kinds under [outputs] (in your site config) for which
+# you want to enable Jf2Feed feeds. As it is JF2 for feeds, it would usually be only
+# for the list Page Kinds.
+# Example:
+#   [outputs]
+#     home = ["HTML", "JF2Feed"]
+#     section = ["HTML", "JF2Feed"]
+#     taxonomy = ["HTML", "JF2Feed"]
+#     taxonomyTerm = ["HTML", "JF2Feed"]
+[mediaTypes."application/jf2feed+json"]
+  suffixes = ["json"]
+[outputFormats.JF2Feed]
+  mediaType = "application/jf2feed+json"
+  baseName = "jf2feed" # generated file = <baseName>.<mediaType."application/jf2feed+json".suffixes[0]> = jf2feed.json
+  isPlainText = true

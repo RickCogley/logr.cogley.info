@@ -1,0 +1,24 @@
+*This is not a standalone theme. This is a Hugo theme component.*
+
+To enable JF2 feeds for your site:
+
+1. Clone this repo to ~<your-site-dir>/themes/hugo-jf2~ directory.
+2. Add these your site's ~config.toml~:
+   - Add "hugo-jf2" as the *left-most element* of the ~theme~ list
+     variable. For example:
+     #+begin_src toml
+     theme = ["hugo-jf2", "my-theme"]
+     #+end_src
+   - Add "JF2Feed" to all the "list" Page Kinds for which you want to
+     create JF2 feeds, and "JF2Post" to the "page" Page Kind:
+     #+begin_src toml
+     [outputs]
+       # <domain>/jf2feed.json
+       home = ["HTML", "RSS", "JF2Feed"]     # default = ["HTML", "RSS"]
+       # <domain>/posts/jf2feed.json
+       section = ["HTML", "RSS", "JF2Feed"]  # default = ["HTML", "RSS"]
+       # <domain>/tags/mytag/jf2feed.json, <domain>/categories/mycat/jf2feed.json
+       taxonomy = ["HTML", "RSS", "JF2Feed"] # default = ["HTML", "RSS"]
+       # <domain>/posts/mypost/jf2post.json
+       page = ["HTML", "JF2Post"]            # default = ["HTML"]
+     #+end_src

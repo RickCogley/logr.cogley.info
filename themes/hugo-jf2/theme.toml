@@ -1,0 +1,15 @@
+name = "Hugo JF2 Feed"
+license = "GPLv3"
+licenselink = "https://github.com/kaushalmodi/hugo-jf2/blob/master/LICENSE"
+description = "Hugo theme component for creating JF2 feeds"
+homepage = "https://scripter.co"
+tags = ["component", "feed", "jf2", "output-format"]
+features = ["jf2"]
+min_version = "0.58.0"
+
+[author]
+  name = "Kaushal Modi"
+  homepage = "https://scripter.co"
+
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
