@@ -12,10 +12,9 @@
     <link rel="authorization_endpoint" href="https://indieauth.com/auth">
     <link rel="webmention" href="https://webmention.io/logr.cogley.info/webmention" />
     <link rel="pingback" href="https://webmention.io/logr.cogley.info/xmlrpc" />
-    {{ with .OutputFormats.Get "RSS" }}
-    <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" />
-    <link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}" />
-    {{ end }}
+    {{ range .AlternativeOutputFormats -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+    {{ end -}}
     <!-- Hugo info -->
     {{ printf "<!--Hugo Build Date: %s-->" hugo.BuildDate | safeHTML }}
     {{ printf "<!--Hugo Commit Hash: %s-->" hugo.CommitHash | safeHTML }}
@@ -24,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono:200,200i,400,400i,700&amp;subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed:200,200i,400,400i,700&amp;subset=latin-ext" rel="stylesheet">
     {{ $styles := resources.Get "rc-main.scss" | resources.ExecuteAsTemplate "style.scss" . | toCSS | postCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $styles.Permalink }}" integrity="{{ $styles.Data.Integrity }}">
 
