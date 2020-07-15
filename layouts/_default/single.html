@@ -18,8 +18,9 @@
     <time class="dt-published dn">{{ .Date }}</time>
     <span class="p-author dn">Rick Cogley</span>
     </article>
-      <a class="f6 link dim br-pill ph3 pv2 mb4 dib white bg-three" href="/">Back to Home</a>
-
+      <a class="f6 link dim br-pill ph3 pv2 mb4 dib white bg-one" href="/">Back to Home</a>
+      {{ $tweettext := printf "🚀 Useful Info on #logr: " }}
+      <a class="f6 link dim br-pill ph3 pv2 mb4 dib white bg-three" href='http://twitter.com/share?url={{ .Permalink }}&text={{ $tweettext | safeHTML }}&via=rickcogley'>Tweet Link</a>
   </main>
 {{ end }}
 {{ define "footer" }}
