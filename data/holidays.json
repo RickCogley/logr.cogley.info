@@ -54,6 +54,33 @@
     "Name Jp": "敬老の日"
   },
   {
+    "@row.id": 367,
+    "Date": "2020-08-15T00:00:00+00:00",
+    "Date in YYYYMMDD": "20200815",
+    "Day of Week": "Saturday",
+    "Date with Month Name": "15 Aug 2020",
+    "Name": "eSolia Summer Holiday",
+    "Name Jp": "イソリア夏季休暇"
+  },
+  {
+    "@row.id": 366,
+    "Date": "2020-08-14T00:00:00+00:00",
+    "Date in YYYYMMDD": "20200814",
+    "Day of Week": "Friday",
+    "Date with Month Name": "14 Aug 2020",
+    "Name": "eSolia Summer Holiday",
+    "Name Jp": "イソリア夏季休暇"
+  },
+  {
+    "@row.id": 365,
+    "Date": "2020-08-13T00:00:00+00:00",
+    "Date in YYYYMMDD": "20200813",
+    "Day of Week": "Thursday",
+    "Date with Month Name": "13 Aug 2020",
+    "Name": "eSolia Summer Holiday",
+    "Name Jp": "イソリア夏季休暇"
+  },
+  {
     "@row.id": 356,
     "Date": "2020-08-10T00:00:00+00:00",
     "Date in YYYYMMDD": "20200810",
