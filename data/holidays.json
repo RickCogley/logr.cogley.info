@@ -153,6 +153,15 @@
     "Name Jp": "成人の日"
   },
   {
+    "@row.id": 389,
+    "Date": "2021-01-04T00:00:00+00:00",
+    "Date in YYYYMMDD": "20210104",
+    "Day of Week": "Monday",
+    "Date with Month Name": "04 Jan 2021",
+    "Name": "New Year Holiday",
+    "Name Jp": "年始休み"
+  },
+  {
     "@row.id": 370,
     "Date": "2021-01-03T00:00:00+00:00",
     "Date in YYYYMMDD": "20210103",
@@ -194,6 +203,15 @@
     "Date in YYYYMMDD": "20201230",
     "Day of Week": "Wednesday",
     "Date with Month Name": "30 Dec 2020",
+    "Name": "Year End Holiday",
+    "Name Jp": "年末休み"
+  },
+  {
+    "@row.id": 388,
+    "Date": "2020-12-29T00:00:00+00:00",
+    "Date in YYYYMMDD": "20201229",
+    "Day of Week": "Tuesday",
+    "Date with Month Name": "29 Dec 2020",
     "Name": "Year End Holiday",
     "Name Jp": "年末休み"
   },
