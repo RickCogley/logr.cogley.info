@@ -1,0 +1,27 @@
+{
+  "name": "rickcogley-logr",
+  "stages": {
+    "staging": {
+      "domain": "staging.logr.cogley.info"
+    },
+    "production": {
+      "domain": "logr.cogley.info",
+      "lambda": {
+        "warm": true
+      }
+    }
+  },
+  "type": "static",
+  "static":{
+    "dir": "public"
+  },
+  "tags": {
+    "Owner": "RickCogley",
+    "AppName": "RickCogleyLogr",
+    "PoweredBy": "ApexUp"
+  },
+  "profile": "apex-up-esolia",
+  "regions": [
+    "ap-northeast-1"
+  ]
+}
