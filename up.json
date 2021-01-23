@@ -2,6 +2,8 @@
   "name": "rickcogley-logr",
   "hooks": {
     "prebuild": [
+      "rm -rf data/holidays.json",
+      "curl --silent "https://pro.dbflex.net/secure/api/v2/15331/$PRODBTOKEN15331/Work%20Holiday/API%20Holidays/select.json" | jq '.' > data/holidays.json",
       "hugo --gc --minify --baseURL=$HUGOBASEURL"
     ],
     "clean": "up prune -s production -r 10"
