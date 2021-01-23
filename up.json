@@ -5,8 +5,7 @@
       "up env add DT=`date +'%Y%m%d-%H%M%S'`",
       "rm -rf data/holidays.json",
       "curl --silent https://pro.dbflex.net/secure/api/v2/15331/$PRODBTOKEN15331/Work%20Holiday/API%20Holidays/select.json | jq '.' > data/holidays.json",
-      "git add data/holidays.json",
-      "git add content/posts/*",
+      "git add .",
       "git commit -m 'Logr update post $DT'",
       "git push origin master",
       "hugo --gc --minify --baseURL=$HUGOBASEURL"
