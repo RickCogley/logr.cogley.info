@@ -2,8 +2,10 @@
   "name": "rickcogley-logr",
   "hooks": {
     "prebuild": [
-      "echo 'test prebuild' > test.log",
-      "echo $HUGOBASEURL >> test.log"
+      "echo 'PREBUILD'",
+      "echo 'Build Hugo with BaseURL from up env...'",
+      "echo $HUGOBASEURL",
+      "hugo --gc --minify --baseURL='$HUGOBASEURL'"
     ],
     "clean": "up prune -s production -r 10"
   },
@@ -39,3 +41,4 @@
     }
   }
 }
+
