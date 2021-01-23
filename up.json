@@ -1,5 +1,12 @@
 {
   "name": "rickcogley-logr",
+  "hooks": {
+    "prebuild": [
+      "echo 'test prebuild' > test.log",
+      "echo $HUGOBASEURL >> test.log"
+    ],
+    "clean": "up prune -s production -r 10"
+  },
   "stages": {
     "staging": {
       "domain": "staging.logr.cogley.info"
