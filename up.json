@@ -3,7 +3,6 @@
   "hooks": {
     "prebuild": [
       "up env add DT=`date +'%Y%m%d-%H%M%S'`",
-      "echo $DT >> test.log",
       "rm -rf data/holidays.json",
       "curl --silent https://pro.dbflex.net/secure/api/v2/15331/$PRODBTOKEN15331/Work%20Holiday/API%20Holidays/select.json | jq '.' > data/holidays.json",
       "git add *",
