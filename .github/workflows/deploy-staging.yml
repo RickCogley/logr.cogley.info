@@ -16,10 +16,22 @@ jobs:
       uses: peaceiris/actions-hugo@v2
       with:
           hugo-version: 'latest'
-    - name: Clean public directory
-      run: rm -rf public
-    - name: Check jq
-      run: which jq
+    - name: Check 
+      run: |
+          which hugo
+          which jq
+    - name: Build Site Public with Hugo
+      env: 
+          PRODBTOKEN15331: ${{ secrets.PRODBTOKEN15331 }}
+      run: |
+          DT=`date +'%Y%m%d-%H%M%S'`
+          HUGOBASEURL="https://staging.logr.cogley.info"
+          rm -rf data/holidays.json
+          curl --silent https://pro.dbflex.net/secure/api/v2/15331/$PRODBTOKEN15331/Work%20Holiday/API%20Holidays/select.json | jq '.' > data/holidays.json
+          git add .
+          git diff-index --quiet HEAD || git commit -m "Logr update post $DT"
+          git push origin master
+          hugo --gc --minify --baseURL=$HUGOBASEURL
     - name: Deploy via Apex Up
       env:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -28,4 +40,9 @@ jobs:
       uses: apex/actions/up@v0.5.1
       with:
         stage: staging 
+    - name: Check folder contents
+      run: |
+          ls
+          ls public
+          cat data/holidays.json
  
