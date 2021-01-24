@@ -30,4 +30,4 @@ jobs:
         stage: production 
         args: -v
     - name: Check ls
-      run: ls 
+      run: ls ..
