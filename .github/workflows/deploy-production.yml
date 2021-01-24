@@ -30,4 +30,6 @@ jobs:
         stage: production 
         args: -v
     - name: Check folder contents
-      run: ls 
+      run: |
+          ls
+          cat prebuild.log 
