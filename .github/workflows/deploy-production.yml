@@ -16,8 +16,6 @@ jobs:
       uses: peaceiris/actions-hugo@v2
       with:
           hugo-version: 'latest'
-    - name: Clean public directory
-      run: rm -rf public
     - name: Check 
       run: |
           which hugo
@@ -31,5 +29,5 @@ jobs:
       with:
         stage: production 
         args: -v
-    - name: Check ls
-      run: ls ..
+    - name: Check folder contents
+      run: ls 
