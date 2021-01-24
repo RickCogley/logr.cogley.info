@@ -30,7 +30,7 @@ jobs:
           curl --silent https://pro.dbflex.net/secure/api/v2/15331/$PRODBTOKEN15331/Work%20Holiday/API%20Holidays/select.json | jq '.' > data/holidays.json
           git add .
           git diff-index --quiet HEAD || git commit -m "Logr update post $DT"
-          git push origin master
+          git push origin staging
           hugo --gc --minify --baseURL=$HUGOBASEURL
     - name: Deploy via Apex Up
       env:
