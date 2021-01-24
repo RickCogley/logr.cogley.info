@@ -27,5 +27,5 @@ jobs:
           UP_CONFIG: ${{ secrets.UP_CONFIG }}
       uses: apex/actions/up@v0.5.1
       with:
-        args: deploy production 
-  
+        stage: production 
+ 
