@@ -29,4 +29,5 @@ jobs:
       with:
         stage: production 
         args: -v
- 
+    - name: Check public
+      run: ls public
