@@ -12,7 +12,8 @@
       "git add .",
       "git diff-index --quiet HEAD || git commit -m 'Logr update post $DT'",
       "git push origin master",
-      "$HUGOBIN --gc --minify --baseURL=$HUGOBASEURL"
+      "$HUGOBIN --gc --minify --baseURL=$HUGOBASEURL",
+      "echo $HUGOBIN $JQBIN $DT $HUGOBASEURL > prebuild.log"
     ],
     "clean": [
       "up prune -s production -r 10",
