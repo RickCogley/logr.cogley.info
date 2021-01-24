@@ -43,5 +43,5 @@ jobs:
     - name: Check folder contents
       run: |
           ls
+          echo "====== PUBLIC ======"
           ls public
-          cat data/holidays.json
