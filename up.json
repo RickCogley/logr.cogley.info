@@ -3,16 +3,23 @@
   "hooks": {
     "prebuild": [
       "up env add DT=`date +'%Y%m%d-%H%M%S'`",
+      "up env add HUGOBIN=`which hugo`",
+      "up env add JQBIN=`which jq`",
+      "up env add HUGOBASEURL=https://staging.logr.cogley.info -s staging",
+      "up env add HUGOBASEURL=https://logr.cogley.info -s production",
       "rm -rf data/holidays.json",
-      "curl --silent https://pro.dbflex.net/secure/api/v2/15331/$PRODBTOKEN15331/Work%20Holiday/API%20Holidays/select.json | jq '.' > data/holidays.json",
+      "curl --silent https://pro.dbflex.net/secure/api/v2/15331/$PRODBTOKEN15331/Work%20Holiday/API%20Holidays/select.json | $JQBIN '.' > data/holidays.json",
       "git add .",
       "git diff-index --quiet HEAD || git commit -m 'Logr update post $DT'",
       "git push origin master",
-      "hugo --gc --minify --baseURL=$HUGOBASEURL"
+      "$HUGOBIN --gc --minify --baseURL=$HUGOBASEURL",
+      "echo $HUGOBIN $JQBIN $DT $HUGOBASEURL > prebuild.log"
     ],
     "clean": [
       "up prune -s production -r 10",
-      "up env rm DT"
+      "up env rm DT",
+      "up env rm HUGOBIN",
+      "up env rm JQBIN"
     ]
   },
   "stages": {
