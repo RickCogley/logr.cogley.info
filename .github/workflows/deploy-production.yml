@@ -40,6 +40,8 @@ jobs:
       uses: apex/actions/up@v0.5.1
       with:
         stage: production 
-        args: -v
     - name: Check folder contents
-      run: ls
+      run: |
+          ls
+          ls public
+          cat data/holidays.json
