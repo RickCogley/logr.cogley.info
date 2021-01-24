@@ -18,12 +18,14 @@ jobs:
           hugo-version: 'latest'
     - name: Clean public directory
       run: rm -rf public
+    - name: Check jq
+      run: which jq
     - name: Deploy via Apex Up
       env:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           UP_CONFIG: ${{ secrets.UP_CONFIG }}
-      uses: apex/actions/up@v0.5.0
+      uses: apex/actions/up@v0.5.1
       with:
         args: deploy production 
   
