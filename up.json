@@ -21,7 +21,9 @@
     "production": {
       "domain": "logr.cogley.info",
       "lambda": {
-        "warm": true
+        "warm": true,
+        "accelerate": true,
+        "memory": 1024
       }
     }
   },
