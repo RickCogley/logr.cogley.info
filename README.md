@@ -1,3 +1,5 @@
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/RickCogley/logr.cogley.info)
+
 # Logr Site
 
 ![Logr Production Deploy Status](https://github.com/rickcogley/logr.cogley.info/workflows/deploy-production/badge.svg?branch=master)  
