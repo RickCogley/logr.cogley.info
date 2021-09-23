@@ -32,7 +32,7 @@ jobs:
           git config --global user.name "Rick Cogley"
           git add .
           git diff-index --quiet HEAD || git commit -m "Logr update post $DT"
-          git push origin master
+          git push origin main
           hugo --gc --minify --baseURL=$HUGOBASEURL
     - name: Deploy via Apex Up
       env:
