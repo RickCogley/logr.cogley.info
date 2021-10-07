@@ -26,19 +26,18 @@ jobs:
       run: |
           DT=`date +'%Y%m%d-%H%M%S'`
           HUGOBASEURL="https://logr.cogley.info"
-          rm -rf data/holidays.json
-          curl --silent https://pro.dbflex.net/secure/api/v2/15331/$PRODBTOKEN15331/Work%20Holiday/API%20Holidays/select.json | jq '.' > data/holidays.json
           git config --global user.email "rick.cogley@esolia.co.jp"
           git config --global user.name "Rick Cogley"
           git add .
           git diff-index --quiet HEAD || git commit -m "Logr update post $DT"
           git push origin main
-          hugo --gc --minify --baseURL=$HUGOBASEURL
+          hugo --gc --minify --verbose --baseURL=$HUGOBASEURL
     - name: Deploy via Apex Up
       env:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           UP_CONFIG: ${{ secrets.UP_CONFIG }}
+          PRODBTOKEN15331: ${{ secrets.PRODBTOKEN15331 }}
       uses: apex/actions/up@v0.5.1
       with:
         stage: production
