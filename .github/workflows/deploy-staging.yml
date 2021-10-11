@@ -16,9 +16,11 @@ jobs:
       uses: peaceiris/actions-hugo@v2
       with:
           hugo-version: 'latest'
+          extended: true
     - name: Check
       run: |
           which hugo
+          hugo version
           which jq
     - name: Build Site Public with Hugo
       env:
