@@ -8,11 +8,8 @@
     <h1 class="ss09 one">{{ .Title }}</h1>
     <h2 class="four">{{ .Date.Format "Monday, 2 Jan, 2006" }}</h2>
     {{ $dt := .Date.Format "02 Jan 2006" }}
-    {{ $token := getenv "PRODBTOKEN15331" }}
-    {{ $bearertoken := printf "Bearer %s" $token }} 
-    {{ $holidaydata := getJSON "https://pro.dbflex.net/secure/api/v2/15331/Work%20Holiday/API%20Holidays/select.json" (dict "Authorization" $bearertoken)  }}
-
-    {{ range where $holidaydata ".Date with Month Name" $dt }}
+    {{ $holdata := partialCached "holidays-json.html" . }}
+    {{ range where $holdata ".Date with Month Name" $dt }}
     {{ with (index . "Name") }}
     <span class="three bg-near-white br3 pa1">🗓 "<strong><i>{{ . }}</i></strong>" in Japan</span>
     {{ end }}

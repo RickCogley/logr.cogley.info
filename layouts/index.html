@@ -15,11 +15,8 @@
               <div class="pr3-ns mb4 mb0-ns w-100 w-20-ns">
                 <h3 class="gray f4">{{ .Key }}</h3>
                 {{ $dt := .Key }}
-                {{ $token := getenv "PRODBTOKEN15331" }}
-                {{ $bearertoken := printf "Bearer %s" $token }} 
-                {{ $holidaydata := getJSON "https://pro.dbflex.net/secure/api/v2/15331/Work%20Holiday/API%20Holidays/select.json" (dict "Authorization" $bearertoken)  }}
-
-                {{ range where $holidaydata ".Date with Month Name" $dt }}
+                {{ $holdata := partialCached "holidays-json.html" . }}
+                {{ range where $holdata ".Date with Month Name" $dt }}
                 {{ with (index . "Name") }}
                 <p class="three bg-near-white br3">🗓 "<strong><i>{{ . }}</i></strong>" in Japan</p>
                 {{ end }}
