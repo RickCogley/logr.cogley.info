@@ -28,6 +28,10 @@ jobs:
       run: |
           DT=`date +'%Y%m%d-%H%M%S'`
           HUGOBASEURL="https://staging.logr.cogley.info"
+          npm install postcss postcss-cli autoprefixer
+          cd assets
+          git clone https://github.com/tachyons-css/tachyons-sass
+          cd ..  
           git config --global user.email "rick.cogley@esolia.co.jp"
           git config --global user.name "Rick Cogley"
           git add .
