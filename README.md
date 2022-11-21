@@ -8,5 +8,5 @@
 
 Rick Cogley's microblog for geeky stuff, at [https://logr.cogley.info](https://logr.cogley.info).
 
-This site is built with [Hugo](https://gohugo.io), and published to AWS via [Apex.sh](https://apex.sh) «[up](https://apex.sh/up/)». 
+This site is built with [Hugo](https://gohugo.io), and published to AWS via [Apex.sh](https://apex.sh) «[up](https://apex.sh/up/)». Who knows if it's supported.
 
