@@ -52,6 +52,18 @@ theme = ["hugo-jf2"]
           endpoint = "https://webmention.io/" # must end with a slash
           account = "logr.cogley.info"
 
+[security]
+    enableInlineShortcodes = false
+    [security.exec]
+      allow = ['^dart-sass-embedded$', '^go$', '^npx$', '^postcss$']
+      osEnv = ['(?i)^(PATH|PATHEXT|APPDATA|TMP|TEMP|TERM)$']
+
+    [security.funcs]
+      getenv = ['^HUGO_', 'PRODB', 'PWD', 'MAINCSS_HASH', 'MAINJS_HASH', 'BUCAJS_HASH', 'BUSTJS_HASH']
+
+    [security.http]
+      methods = ['(?i)GET|POST']
+      urls = ['.*']
 
 [imaging]
 # Default resample filter used for resizing. Default is Box,
