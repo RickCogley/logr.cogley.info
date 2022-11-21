@@ -16,14 +16,16 @@
   },
   "stages": {
     "staging": {
-      "domain": "staging.logr.cogley.info"
+      "domain": "staging.logr.cogley.info",
+      "runtime": "nodejs16.x"
     },
     "production": {
       "domain": "logr.cogley.info",
       "lambda": {
         "warm": true,
         "accelerate": true,
-        "memory": 1024
+        "memory": 1024,
+        "runtime": "nodejs16.x"
       }
     }
   },
