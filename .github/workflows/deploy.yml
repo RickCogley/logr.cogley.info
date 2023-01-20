@@ -23,7 +23,7 @@ jobs:
 
     steps:
       - name: Clone repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           submodules: true # Fetch Hugo themes (true or recursive)
           fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
