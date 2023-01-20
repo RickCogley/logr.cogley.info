@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       id-token: write # Allows authentication with Deno Deploy.
-      contents: read # Allows cloning the repo.
+      contents: write # Allows cloning the repo.
 
     steps:
       - name: Clone repository
