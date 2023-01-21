@@ -65,6 +65,8 @@ jobs:
           project: logr-cogley-info # the name of the project on Deno Deploy
           entrypoint: https://deno.land/std@0.140.0/http/file_server.ts
           root: public # Where the built HTML/CSS/JS files are located.
+        run:
+          echo "action_state=yellow" >> $GITHUB_ENV
 
       - name: Check folder contents
         run: |
@@ -79,6 +81,6 @@ jobs:
         env:
           SLACK_INCOMING_WEBHOOK: ${{ secrets.SLACK_INCOMING_WEBHOOK }}
           SLACK_TITLE: 'Deno Deploy'
-          SLACK_MESSAGE: 'Commit: ${{ github.sha }} on ${{ github.ref }} from ${{ github.repository }} ${{ env.DENO_DEPLOYMENT_ID }}'
+          SLACK_MESSAGE: 'Commit: ${{ github.sha }} on ${{ github.ref }} from ${{ github.repository }} ${{ env.DENO_DEPLOYMENT_ID }} ${{ env.action_state }}'
 
 
