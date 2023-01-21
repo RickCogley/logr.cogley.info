@@ -80,4 +80,4 @@ jobs:
         env:
           SLACK_INCOMING_WEBHOOK: ${{ secrets.SLACK_INCOMING_WEBHOOK }}
           SLACK_TITLE: 'Deno Deploy'
-          SLACK_MESSAGE: 'Commit: ${{ github.sha }} on ${{ github.ref }} from ${{ github.repository }} ${{ env.DENO_DEPLOYMENT_ID }} https://logr-cogley-info-${{ steps.deploy.outputs.deployment-id }}.deno.dev ${{ steps.deploy.outputs.project-id }}'
+          SLACK_MESSAGE: 'Commit: ${{ github.sha }} on ${{ github.ref }} from ${{ github.repository }} ${{ env.DENO_DEPLOYMENT_ID }} https://logr-cogley-info-${{ steps.deploy.outputs.deployment-id }}.deno.dev ${{ steps.deploy.outputs.project }}'
