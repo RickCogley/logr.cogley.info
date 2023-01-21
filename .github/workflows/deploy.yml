@@ -69,6 +69,5 @@ jobs:
       - name: Check folder contents
         run: |
             ls
-            echo $DENO_DEPLOYMENT_ID
             echo "====== PUBLIC ======"
             ls public
