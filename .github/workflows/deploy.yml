@@ -60,6 +60,7 @@ jobs:
             hugo --gc --minify --verbose --baseURL=$HUGOBASEURL --ignoreCache
 
       - name: Deploy to Deno Deploy
+        id: deploy
         uses: denoland/deployctl@v1
         with:
           project: logr-cogley-info # the name of the project on Deno Deploy
@@ -81,6 +82,6 @@ jobs:
         env:
           SLACK_INCOMING_WEBHOOK: ${{ secrets.SLACK_INCOMING_WEBHOOK }}
           SLACK_TITLE: 'Deno Deploy'
-          SLACK_MESSAGE: 'Commit: ${{ github.sha }} on ${{ github.ref }} from ${{ github.repository }} ${{ env.DENO_DEPLOYMENT_ID }} ${{ env.lalala }}'
+          SLACK_MESSAGE: 'Commit: ${{ github.sha }} on ${{ github.ref }} from ${{ github.repository }} ${{ env.DENO_DEPLOYMENT_ID }} ${{ env.lalala }} ${{ steps.deploy.outputs.deployment-id }}'
 
 
