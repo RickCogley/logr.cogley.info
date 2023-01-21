@@ -79,6 +79,6 @@ jobs:
         env:
           SLACK_INCOMING_WEBHOOK: ${{ secrets.SLACK_INCOMING_WEBHOOK }}
           SLACK_TITLE: 'Deno Deploy'
-          SLACK_MESSAGE: 'Info about deploy ${{env.DENO_DEPLOYMENT_ID}} ${{env.GITHUB_REPOSITORY}} $GITHUB_REF'
+          SLACK_MESSAGE: 'Info about deploy ${{env.DENO_DEPLOYMENT_ID}} ${{env.GITHUB_REPOSITORY}} $GITHUB_REF ${GITHUB_REPOSITORY##*/}'
 
 
