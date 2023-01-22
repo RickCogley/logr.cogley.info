@@ -72,6 +72,7 @@ jobs:
             ls
             echo "====== PUBLIC ======"
             ls public
+            echo '${{ toJSON(steps) }}'
 
       - name: Ping Slack esolia-websites channel
         uses: bryannice/gitactions-slack-notification@2.0.0
