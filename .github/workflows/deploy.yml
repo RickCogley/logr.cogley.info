@@ -2,16 +2,18 @@ name: Deploy to Deno Deploy
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
+  # Triggers the workflow on push or pull request events for main or dev
+  # Deno Deploy project is linked to one branch, usually main, but will
+  # generate a non-production deploy URL for branches other than main
   push:
-    branches: [ main ]
+    branches: [ main, dev ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, dev ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
   schedule:
-    # At 02:03 every day.
+    # At 17:05 GMT every day, middle of the night in Japan.
     - cron: '5 17 * * *'
 
 # A workflow run is made up of one or more
@@ -22,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       id-token: write # Allows authentication with Deno Deploy.
-      contents: write # Allows cloning the repo.
+      contents: write # Allows cloning the repo. Need write this time, because we git push
 
     steps:
       - name: Clone repository
@@ -34,8 +36,8 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: 'latest'
-          extended: 'true'
+          hugo-version: 'latest' # May fail if there's a breaking change, but just check logs for errors
+          extended: 'true' # Need extended for anything fancy
       - name: Check
         run: |
             which hugo
@@ -60,18 +62,19 @@ jobs:
             hugo --gc --minify --verbose --baseURL=$HUGOBASEURL --ignoreCache
 
       - name: Deploy to Deno Deploy
-        id: deploy
+        id: deploy # needed to be able to get outputs from this step below
         uses: denoland/deployctl@v1
         with:
           project: logr-cogley-info # the name of the project on Deno Deploy
-          entrypoint: https://deno.land/std@0.140.0/http/file_server.ts
+          entrypoint: https://deno.land/std@0.140.0/http/file_server.ts # wraps the static output files
           root: public # Where the built HTML/CSS/JS files are located.
 
-      - name: Check folder contents
+      - name: Check folder contents and output
         run: |
             ls
             echo "====== PUBLIC ======"
             ls public
+            echo "====== STEPS ======"
             echo '${{ toJSON(steps) }}'
 
       - name: Ping Slack esolia-websites channel
@@ -79,4 +82,4 @@ jobs:
         env:
           SLACK_INCOMING_WEBHOOK: ${{ secrets.SLACK_INCOMING_WEBHOOK }}
           SLACK_TITLE: 'Deno Deploy'
-          SLACK_MESSAGE: 'Commit: ${{ github.sha }} on ${{ github.ref }} from ${{ github.repository }}. Deno Deploy <strong>Deployment URL</strong>: ${{ steps.deploy.outputs.url }}'
+          SLACK_MESSAGE: 'Commit: ${{ github.sha }} on ${{ github.ref }} from ${{ github.repository }}. Deployment URL: ${{ steps.deploy.outputs.url }}'
