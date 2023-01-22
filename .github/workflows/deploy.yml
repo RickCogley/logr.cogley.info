@@ -82,4 +82,4 @@ jobs:
         env:
           SLACK_INCOMING_WEBHOOK: ${{ secrets.SLACK_INCOMING_WEBHOOK }}
           SLACK_TITLE: 'Deno Deploy'
-          SLACK_MESSAGE: 'Commit: ${{ github.sha }} on ${{ github.ref }} from ${{ github.repository }}. Deployment URL: ${{ steps.deploy.outputs.url }}'
+          SLACK_MESSAGE: 'Git Commit: ${{ github.sha }} on ${{ github.ref }} from ${{ github.repository }}. Deployment URL: ${{ steps.deploy.outputs.url }}'
