@@ -76,8 +76,6 @@ jobs:
 
       - name: Ping Slack esolia-websites channel
         uses: bryannice/gitactions-slack-notification@2.0.0
-        with:
-          github-ref: ${{env.GITHUB_REF}}
         env:
           SLACK_INCOMING_WEBHOOK: ${{ secrets.SLACK_INCOMING_WEBHOOK }}
           SLACK_TITLE: 'Deno Deploy'
